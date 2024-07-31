@@ -75,5 +75,30 @@ azerty
 Le projet est pré-déployé sur le lien reçu au début de votre examen.
 Ce lien vous permet d'accèder au projet via un lien HTTPs
 
-Vous avez une connexion SFTP disponible et SSH afin de modifier ce projet en conséquence
+Vous avez une connexion sFTP disponible et SSH afin de modifier ce projet en conséquence
 Attention, prévoyez bien vos modifications en local et testez bien ces dernières avant de les déployers.
+
+
+## Accès sFTP
+
+Pour l'accès sFTP l'utilisation de FileZilla est recommandé, vous trouverez un fichier explicatif dans le dossier docs
+
+## Accès MySQL
+
+Pour l'accès MySQL le ssh est nécessaire, Vous pouvez vous connecter en ssh au serveur avec : `ssh [nom principal]@exam.andragogy.fr -p [port SSH]`, vous trouverez un fichier explicatif pour MySQL dans le dossier docs
+
+## Déploiement
+
+Le serveur est surveillé par Apache et le mod Django, dès qu'un fichier est modifié, celui ci se met à jour ( un délai peut être visible ), les fichiers et dossier couvert sont ceux présent dans `/var/www/html`
+
+Vous pouvez forcer le rechargement apache à l'aide de la commande suivante :
+D'abord en vous connectant en ssh au serveur avec : `ssh [nom principal]@exam.andragogy.fr -p [port SSH]`
+```shell
+    service apache2 reload
+```
+
+La commande pour passer root en SSH est :
+```shell
+    su
+```
+Puis indiquer votre mot de passe
